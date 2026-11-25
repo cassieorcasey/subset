@@ -356,7 +356,7 @@ svg.i { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-widt
 .field > span { flex: none; width: 104px; }
 .field input { flex: 1; min-width: 0; height: 40px; border: 0; background: none; outline: 0; font-size: 17px; text-align: right; }
 .field input::placeholder { color: var(--text2); opacity: .7; }
-.field input:focus-visible { outline: 0; }
+.field input:focus-visible { outline: 0; box-shadow: none; }
 .field:focus-within { background: var(--fill); }
 .field.stack { flex-direction: column; align-items: stretch; gap: 0; padding-block: 10px; }
 .field.stack > span { width: auto; font-size: 13px; color: var(--text2); }
@@ -392,8 +392,9 @@ svg.i { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-widt
 .amount-wrap .cur { font-size: 22px; font-weight: 600; color: var(--text2); }
 .amount-wrap input { width: 1ch; min-width: 1ch; max-width: 100%; padding: 0; border: 0; background: none; outline: 0; text-align: center; font-size: 48px; font-weight: 700; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
 .amount-wrap .amt-m { position: absolute; left: -9999px; top: 0; visibility: hidden; white-space: pre; pointer-events: none; }
-.amount-wrap input::placeholder { color: var(--fill-strong); }
-.amount-wrap input:focus-visible { outline: 0; }
+.amount-wrap input::placeholder { color: var(--text-muted); opacity: .6; }
+.amount-wrap input:focus-visible { outline: 0; box-shadow: none; }
+.amount-wrap input { caret-color: var(--accent); }
 .hint { text-align: center; font-size: 14px; color: var(--text2); min-height: 22px; margin-bottom: 14px; }
 .hint b { color: var(--text); font-weight: 600; } .hint .neg { color: var(--bad); font-weight: 600; }
 .lbl2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .02em; color: var(--text2); margin: 4px 4px 8px; }

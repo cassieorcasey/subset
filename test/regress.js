@@ -102,6 +102,13 @@ const rec = (name, ok, info = '') => { R.push((ok ? 'PASS ' : 'FAIL ') + name + 
     }
     rec('amount input shows every digit', !bad.length, bad.join(' | '));
     await ctx.close(); }
+  // 11. fokus input jumlah/field tidak menggambar halo kotak (bug iPhone: kotak lavender besar)
+  { const { ctx, p } = await mk({ width: 390, height: 844 });
+    await p.click('#add-btn'); await p.waitForTimeout(400);
+    await p.focus('#f-amount'); await p.keyboard.press('Tab'); await p.focus('#f-amount');
+    const sh = await p.evaluate(() => [...document.querySelectorAll('#f-amount, .field input')].map((e) => { e.focus(); return getComputedStyle(e).boxShadow; }));
+    rec('focused inputs have no halo box-shadow', sh.every((x) => x === 'none'), sh.join(' | '));
+    await ctx.close(); }
   console.log(R.join('\n')); await b.close();
   if (R.some((x) => x.startsWith('FAIL'))) process.exit(1); console.log('REGRESS OK');
 })();
