@@ -1,5 +1,5 @@
 /**
- * Finite — API Google Apps Script untuk Google Sheets
+ * Finite: API Google Apps Script untuk Google Sheets
  *
  * Skrip ini harus dibuat dari dalam Google Sheet (Extensions > Apps Script),
  * jadi data selalu tersimpan di spreadsheet itu dan bisa dibuka langsung.

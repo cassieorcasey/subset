@@ -1,9 +1,9 @@
-# Finite — Panduan Pasang (±15 menit)
+# Finite: Panduan Pasang (±15 menit)
 
 Arsitektur: `index.html` (aplikasi, di-hosting gratis) → memanggil **Apps Script** (API) → menulis ke **Google Sheets** milik Anda.
 Satu akun Google, data sama di iPhone dan laptop Windows, dan tetap bisa dibuka langsung di Sheets.
 
-## Bagian A — Backend (Google Sheets + Apps Script)
+## Bagian A: Backend (Google Sheets + Apps Script)
 
 1. Buat Google Sheet baru (kosong), beri nama mis. **Finite**.
 2. Menu **Extensions → Apps Script**. Hapus isi `Code.gs` bawaan, tempel seluruh isi file `apps-script/Code.gs`.
@@ -21,7 +21,7 @@ Satu akun Google, data sama di iPhone dan laptop Windows, dan tetap bisa dibuka 
 
 Soal keamanan: akses "Anyone" hanya membuka pintu; setiap permintaan ditolak tanpa token. Siapa pun yang tahu URL **dan** token bisa membaca/menulis data, jadi jaga keduanya. Untuk mengganti token: ubah di `Code.gs`, deploy versi baru, lalu masukkan token baru di tiap perangkat.
 
-## Bagian B — Hosting aplikasi (pilih salah satu, gratis)
+## Bagian B: Hosting aplikasi (pilih salah satu, gratis)
 
 Aplikasi harus berada di alamat **https** agar bisa dipasang di iPhone.
 
@@ -30,7 +30,7 @@ Aplikasi harus berada di alamat **https** agar bisa dipasang di iPhone.
 
 Folder `apps-script/` dan `test/` tidak perlu diunggah. URL Apps Script dan token **tidak** ditulis di file; Anda memasukkannya lewat panel Sinkronisasi di aplikasi, jadi aman walau situs bersifat publik.
 
-## Bagian C — Hubungkan perangkat
+## Bagian C: Hubungkan perangkat
 
 **Laptop Windows (Edge/Chrome)**
 1. Buka alamat aplikasi → ketuk tombol status **Lokal** di kanan atas (panel Sinkronisasi) → isi URL Web App + Token → **Hubungkan**.

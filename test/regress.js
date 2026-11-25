@@ -7,7 +7,7 @@ const day = (n) => { const d = new Date(Date.now() - n * 864e5); return d.getFul
 const cats = ['Makan Harian', 'Transport', 'To Invest', 'Hiburan', 'Kesehatan', 'Pendidikan', 'Cicilan', 'Hadiah', 'Liburan', 'Darurat'].map((n) => ({ name: n, note: '' }));
 const base = { v: 1, cats, topups: cats.map((c, i) => ({ id: 't' + i, date: day(3), category: c.name, amount: 1000000, note: '' })), expenses: [{ id: 'e1', date: day(1), category: 'Darurat', amount: 12500.5, note: '=SUM(A1)' }, { id: 'e2', date: day(0), category: 'Transport', amount: 0.3, note: 'x' }], queue: [], cfg: { url: '', token: '' }, theme: 'auto', lastCat: '', lastSync: 0 };
 const R = [];
-const rec = (name, ok, info = '') => { R.push((ok ? 'PASS ' : 'FAIL ') + name + (info ? ' — ' + info : '')); };
+const rec = (name, ok, info = '') => { R.push((ok ? 'PASS ' : 'FAIL ') + name + (info ? ': ' + info : '')); };
 (async () => {
   const b = await chromium.launch();
   const mk = async (vp, st = base, touch = true) => {

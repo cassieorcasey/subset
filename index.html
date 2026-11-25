@@ -695,7 +695,7 @@ async function sync() {
     if (S.queue.length) scheduleSync(100);
   } catch (e) {
     const net = e.name === 'AbortError' || e instanceof TypeError || !navigator.onLine;
-    setSync(net ? 'offline' : 'error', net ? 'Offline — dikirim saat online.' : e.message);
+    setSync(net ? 'offline' : 'error', net ? 'Offline. Akan dikirim saat online.' : e.message);
   } finally { syncing = false; }
 }
 
@@ -1134,7 +1134,7 @@ function openGroupPanel(gk) {
 }
 
 function viewSettings() {
-  const cats = S.cats.map((c) => `<button class="row" data-act="cat" data-cat="${esc(c.name)}" style="--c:${colorOf(c.name)}"><span class="av" aria-hidden="true"></span><span class="row-main"><span class="row-title">${esc(c.name)}</span><span class="row-sub">${esc(c.note || '—')}</span></span></button>`).join('');
+  const cats = S.cats.map((c) => `<button class="row" data-act="cat" data-cat="${esc(c.name)}" style="--c:${colorOf(c.name)}"><span class="av" aria-hidden="true"></span><span class="row-main"><span class="row-title">${esc(c.name)}</span><span class="row-sub">${esc(c.note || 'Tanpa catatan')}</span></span></button>`).join('');
   const th = (v, l) => `<button role="radio" aria-checked="${S.theme === v}" data-act="theme" data-v="${v}">${l}</button>`;
   return `<div class="set-sec" style="margin-top:8px"><h2>Kategori (${S.cats.length}/${MAX_CATS})</h2>
     <div class="group">${cats || '<div class="status-line"><b style="font-weight:500;color:var(--text2)">Belum ada kategori</b></div>'}</div>
@@ -1360,7 +1360,7 @@ function openCatForm(name) {
     const v = nm.value.trim();
     const clash = S.cats.some((c) => c.name.toLowerCase() === v.toLowerCase() && (!cur || c.name !== cur.name));
     sv.disabled = !v || clash;
-    hint.textContent = clash ? 'Nama sudah ada.' : (cur && used ? `Dipakai ${used} transaksi — ganti nama ikut memperbarui semuanya.` : '');
+    hint.textContent = clash ? 'Nama sudah ada.' : (cur && used ? `Dipakai ${used} transaksi. Ganti nama ikut memperbarui semuanya.` : '');
   };
   nm.addEventListener('input', chk); chk();
   $('#cf', s).addEventListener('submit', (e) => {
