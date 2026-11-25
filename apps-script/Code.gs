@@ -1,5 +1,5 @@
 /**
- * Finite: API Google Apps Script untuk Google Sheets
+ * Subset: API Google Apps Script untuk Google Sheets
  *
  * Skrip ini harus dibuat dari dalam Google Sheet (Extensions > Apps Script),
  * jadi data selalu tersimpan di spreadsheet itu dan bisa dibuka langsung.
@@ -32,7 +32,7 @@ const EXP_COLS = 6; // A Tanggal | B Kategori | C Keterangan | D Jumlah | E Sisa
 /* ------------------------------------------------------------------ */
 
 function doGet() {
-  return json_({ ok: true, service: 'Finite', version: 1 });
+  return json_({ ok: true, service: 'Subset', version: 1 });
 }
 
 function doPost(e) {
@@ -331,7 +331,7 @@ function sh_(name) {
 /* ------------------------------------------------------------------ */
 
 function onOpen() {
-  SpreadsheetApp.getUi().createMenu('Finite').addItem('Siapkan sheet', 'setup').addToUi();
+  SpreadsheetApp.getUi().createMenu('Subset').addItem('Siapkan sheet', 'setup').addToUi();
 }
 
 function setup() {
@@ -407,7 +407,7 @@ function setup() {
     ? 'Sheet dibuat: ' + created.join(', ') + '. Lanjut ke Deploy > New deployment > Web app.'
     : 'Semua sheet sudah ada. Tidak ada yang diubah.';
   Logger.log(msg);
-  try { ss.toast(msg, 'Finite', 8); } catch (e) { /* tidak ada UI */ }
+  try { ss.toast(msg, 'Subset', 8); } catch (e) { /* tidak ada UI */ }
 }
 
 function styleSheet_(sheet, title, headerRanges, widths) {

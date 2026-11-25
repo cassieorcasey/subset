@@ -1,6 +1,6 @@
 {
-  "name": "Finite",
-  "short_name": "Finite",
+  "name": "Subset",
+  "short_name": "Subset",
   "description": "Budget amplop pribadi yang tersimpan di Google Sheets Anda.",
   "start_url": "./",
   "scope": "./",

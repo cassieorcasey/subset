@@ -1,11 +1,11 @@
-# Finite: Panduan Pasang (±15 menit)
+# Subset: Panduan Pasang (±15 menit)
 
 Arsitektur: `index.html` (aplikasi, di-hosting gratis) → memanggil **Apps Script** (API) → menulis ke **Google Sheets** milik Anda.
 Satu akun Google, data sama di iPhone dan laptop Windows, dan tetap bisa dibuka langsung di Sheets.
 
 ## Bagian A: Backend (Google Sheets + Apps Script)
 
-1. Buat Google Sheet baru (kosong), beri nama mis. **Finite**.
+1. Buat Google Sheet baru (kosong), beri nama mis. **Subset**.
 2. Menu **Extensions → Apps Script**. Hapus isi `Code.gs` bawaan, tempel seluruh isi file `apps-script/Code.gs`.
 3. Di baris atas, ganti `GANTI_TOKEN_INI` dengan kata sandi panjang buatan Anda (≥ 24 karakter acak). Ini kunci akses API. Simpan di password manager.
 4. (Opsional) Project Settings → centang **Show "appsscript.json"** → tempel isi `apps-script/appsscript.json` agar zona waktu Asia/Jakarta.
